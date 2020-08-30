@@ -5,20 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale-10">
     <title>Mensagens</title>
+    <style>
+        #msgBox {
+            width:  350px;
+            height: 400px;
+            border-style: solid;
+        }
+    </style>
 </head>
 
 <body>
     <section name="chat" id="chat">
-        <div id="boxMessages">
-            <h2>Chat:</h2>
-        </div>
+        <h2>Chat:</h2>
+        <div id="msgBox">
+
+        </div >
         </div >
         <div id="inputMsg">
-            <input type="text" id="conteudoMsg" value="Digite a sua mensagem">
+            <input type="text" id="msg" value="Digite a sua mensagem">
             <button type="submit" id="enviar">Enviar</button>
         </div>
     </section>
-    <script src="obj-votos.js"></script>
+    <script src="chat.js"></script>
 </body>
 
 </html>
