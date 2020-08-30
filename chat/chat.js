@@ -2,15 +2,35 @@
 var usuario = "usuario";
 
 // cria objetos mensagem:
-function Mensagem(usuario, conteudo, upVotes=0, downVotes=0) {
+function Mensagem(usuario, conteudo, upVotes=0, upStatus=true, downVotes=0, downStatus=true) {
     this.usuario = usuario;
     this.conteudo = conteudo;
     this.upVotes = upVotes;
-    this.downVotes = downVotes;};
+    this.upStatus = upStatus;
+    this.downVotes = downVotes;
+    this.downStatus = downStatus;
+};
 Mensagem.prototype.oneUp = function () {
-    this.upVotes += 1;};
+    if (this.upStatus) {
+        this.upVotes += 1;
+        this.upStatus = false;
+    } else {
+        this.upVotes -= 1;
+        this.upStatus = true;
+    }};
 Mensagem.prototype.oneDown = function () {
-    this.downVotes += 1;};
+    if (this.downStatus) {
+        this.downVotes += 1;
+        this.downStatus = false;
+    } else {
+        this.downVotes -= 1;
+        this.downStatus = true;
+    }
+}
+
+Mensagem.prototype.highlightMsg = function () {
+        alert("Essa mensagem está muito engajada!");
+};
 
 
 //Enviar uma mensagem:
@@ -40,6 +60,10 @@ function pullMsg(mensagem, i) {
     msgUpVotes.onclick = function () {
         mensagem.oneUp();
         msgUpVotes.innerText = `UP:${mensagem.upVotes}`
+        //destaca a mensagem dependendo do engajamento
+        if (mensagem.upVotes + mensagem.downVotes >= 2) {
+            mensagem.highlightMsg();
+        }
     };  
     msgContent.appendChild(msgUpVotes);
     //Cria a funcionalidade do botão de DownVote
@@ -49,8 +73,10 @@ function pullMsg(mensagem, i) {
     msgDownVotes.onclick = function () {
         mensagem.oneDown();
         msgDownVotes.innerText = `DOWN:${mensagem.downVotes}`
-    };
+        //destaca a mensagem dependendo do engajamento
+        if (mensagem.upVotes + mensagem.downVotes >= 2) {
+            mensagem.highlightMsg();
+        }};
     msgContent.appendChild(msgDownVotes);
     msgBox.appendChild(msgContent);
 }
-
