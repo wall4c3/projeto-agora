@@ -33,6 +33,7 @@ function pullMsg(mensagem, i) {
     var msgContent = document.createElement("div");
     msgContent.id = msgId;
     msgContent.innerText = `${mensagem.conteudo}---@${mensagem.usuario}`;
+    //Cria a funcionalidade do botão de UpVote
     var msgUpVotes = document.createElement("button");
     msgUpVotes.id = msgId;
     msgUpVotes.innerText = `UP:${mensagem.upVotes}`;
@@ -41,7 +42,15 @@ function pullMsg(mensagem, i) {
         msgUpVotes.innerText = `UP:${mensagem.upVotes}`
     };  
     msgContent.appendChild(msgUpVotes);
+    //Cria a funcionalidade do botão de DownVote
+    var msgDownVotes = document.createElement("button");
+    msgDownVotes.id = msgId;
+    msgDownVotes.innerText = `DOWN:${mensagem.downVotes}`;
+    msgDownVotes.onclick = function () {
+        mensagem.oneDown();
+        msgDownVotes.innerText = `DOWN:${mensagem.downVotes}`
+    };
+    msgContent.appendChild(msgDownVotes);
     msgBox.appendChild(msgContent);
 }
 
-//Cria a funcionalidade do botão de UpVote
