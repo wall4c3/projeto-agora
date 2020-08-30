@@ -29,7 +29,11 @@ Mensagem.prototype.oneDown = function () {
 }
 
 Mensagem.prototype.highlightMsg = function () {
-        alert("Essa mensagem está muito engajada!");
+    var highlightsBox = document.querySelector("div#highlightsBox");
+    var highlightMsg = document.createElement("div"); 
+    highlightMsg.id = "highlightMsg" //falta diferenciar as mensagens destacadas entre si;
+    highlightMsg.innerText = `${this.conteudo}---@${this.usuario}`
+    highlightsBox.appendChild(highlightMsg);    
 };
 
 
