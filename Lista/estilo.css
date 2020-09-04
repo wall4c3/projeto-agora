@@ -1,0 +1,46 @@
+/*Ficha completa*/
+#ficha{
+
+}
+
+/*Espaço com os nomes e horarios*/
+#boxSub{
+
+
+}
+/*Botao que inicia o contador*/
+#startCountDown{
+
+}
+
+/*Ao clicar em enviar são gerados novas classes e ids*/
+
+/*div que printa as informaçoes de todos os inscritos de forma global*/
+.Subs{
+
+}
+
+/*Horario a esquerda da pagina(esta dentro da div Subs)*/
+.horaSubs{
+
+}
+
+/*Nomes dos inscritos(esta dentro da div Subs)*/
+.nomeSubs{
+
+}
+
+/*tempo de fala dos inscritos(esta dentro da div Subs)*/
+.tempoSubs{
+
+}
+
+/*Div com o botao e o input do inscrito*/
+#inputNomes{
+
+}
+
+/*Botão*/
+.enviarSub{
+
+}
