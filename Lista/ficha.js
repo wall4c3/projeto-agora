@@ -43,6 +43,8 @@ enviarSub.onclick = function() {
     }
     //conta numero de inscritos
     aux++;
+    //Limpa input
+    document.querySelector("#conteudoNome").value = '';
 }
 
 
