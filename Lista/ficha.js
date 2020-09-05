@@ -3,6 +3,7 @@ const enviarSub = document.querySelector("button#enviarSub");
 const boxSub = document.querySelector("#boxSub");
 const nome = document.querySelector("input#conteudoNome");
 var i = 0;
+var j = 0;
 //Numero do inscrito
 var aux = 0;
 //Globais de inicializaçao- nao alterar
@@ -54,11 +55,13 @@ var cronometro;
 
 
 //Inicia contagem do countDown
-start.onclick = function() {
-    cronometro = setInterval(countDown, miliseg);
-    seg = 59;
-    min = 2;
-
+if(j === i){
+    start.onclick = function() {
+        cronometro = setInterval(countDown, miliseg);
+        seg = 59;
+        min = 2;
+        j++;
+           }
 }
 
 
