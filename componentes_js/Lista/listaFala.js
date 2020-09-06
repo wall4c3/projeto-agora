@@ -41,7 +41,7 @@ enviarSub.onclick = function () {
 
 //Variaveis do countDown
 const start = document.querySelector("button#startCountDown");
-var miliseg = 10;
+var miliseg = 1000;
 var cronometro;
 
 

@@ -10,7 +10,7 @@
       </div>
 
       
-      <h1><pre>Problemas</pre></h1>
+      <h1><pre>Problemas:</pre></h1>
       <pre style="font-size: 15px">
         - Organização do fluxo da assembléia;
         - Poder de voz a todxs xs participantes;
@@ -18,7 +18,7 @@
       </pre>
       <hr>
       
-      <h1><pre>funcionalidades</pre></h1>
+      <h1><pre>Funcionalidades:</pre></h1>
       <pre style="font-size:15px">
         - Lista de fala;
         - Feed da organização;
