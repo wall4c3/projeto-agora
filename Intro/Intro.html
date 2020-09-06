@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+	<meta charset="utf-8">
+	<title> Página informativa </title>	
+	<link rel="stylesheet"
+			type="text/css"
+			href="Intro.css"
+	/>
+	<script src="informes.js"></script>	
+	<script src="handlebars-v4.7.6.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	
+</head>
+
+<body>
+	
+	<div id="background_top">
+	
+		<nav>
+			<div class="logo">
+				<h4>Hackathon</h4>
+			</div>
+			
+			<ul class="nav-links">
+				<li><a id="Sinopse" href="#">Informes</a></li>
+				<li><a id="Characters" href="#">Funcionalidades</a></li>
+			</ul>
+			
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+		
+		<div class="Painel">
+			<span class="text1">Agora</span>
+			<span class="text2">Assembleias</span>
+		</div>
+		
+	</div>
+	
+	<div class ="bod">
+		<div class="Container">
+			<div class="box">
+				<div class="content">
+					<h2>01</h2>
+					<h3>Assembleias</h3>
+					<p> Agora? A democracia nas discussões e debates sempre se fez presente na história, não
+						sendo diferente no período atual...
+					</p>
+					<a id="card1" href="#content_cards">Read More</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="content">
+					<h2>02</h2>
+					<h3>Funcionalidades</h3>
+					<p> O site apresenta ferramentas para serem usadas em conjunto com uma assembleias 
+						de modo a melhorar a experiência do usuário...
+					</p>
+					<a id="card2" href="#content_cards">Read More</a>
+				</div>
+			</div>
+			<div class="box">
+				<div class="content">
+					<h2>03</h2>
+					<h3>Hackathon</h3>
+					<p> O Hackathon democrático foi uma iniciativa que nos incentivou a construir este site
+						e pensar em uma ferramenta para ajudar os usuários em assembléias online...
+					</p>
+					<a id="card3" href="#content_cards">Read More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="content_cards">
+	</div>
+	
+	
+	<script id="cards" type="text/x-handlebars-template">
+	
+		<h1 id="titulo" class="titulo"> {{Titulo}} </h1>
+		<hr></hr>
+		<p id="conteudo" class="conteudo"> {{Conteudo}} </p>
+		
+	</script>
+	
+	<script src="Intro.js"></script>
+	
+	<script type="text/javascript">
+	
+		var variavel;
+		function showTemplate(template, data){
+			var html    = template(data);
+			$('#content_cards').html(html);
+		};
+		var source = $("#cards").html();
+		variavel = Handlebars.compile(source);
+		
+		$('#card1').click(function(){
+			showTemplate(variavel, card1);
+		});
+		$('#card2').click(function(){
+			showTemplate(variavel, card2);
+		});
+		$('#card3').click(function(){
+			showTemplate(variavel, card3);
+		});
+		
+		
+		botao1.addEventListener('click', ()=>{
+			document.getElementById("content_cards").style.background = "#010D26";
+			document.getElementById("botao1").style.background = "#010D26";
+			document.getElementById("botao2").style.background = "#010D26";
+			document.getElementById("botao1").style.color= "rgb(226,226,226)";
+			document.getElementById("botao2").style.color = "rgb(226,226,226)";
+			document.getElementById("botao1").style.border = "1px solid rgb(226,226,226)";
+			document.getElementById("botao2").style.border = "1px solid rgb(226,226,226)";
+			document.getElementById("titulo").style.color = "rgb(226,226,226)";
+			document.getElementById("conteudo").style.color = "rgb(226,226,226)";
+		});
+		
+		botao2.addEventListener('click', ()=>{
+			document.getElementById("content_cards").style.background = "beige";
+			document.getElementById("botao1").style.background = "beige";
+			document.getElementById("botao2").style.background = "beige";
+			document.getElementById("botao1").style.color= "black";
+			document.getElementById("botao2").style.color = "black";
+			document.getElementById("botao1").style.border = "1px solid black";
+			document.getElementById("botao2").style.border = "1px solid black";
+			document.getElementById("titulo").style.color = "black";
+			document.getElementById("conteudo").style.color = "black";
+	
+		});
+		
+
+		
+	</script>
+	
+</body>
+</html>
