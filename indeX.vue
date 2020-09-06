@@ -149,16 +149,13 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background: #69607F;
-}
 
 #feed {
   position: relative;
   width: 100%;
   height: 300px;
   border: 3.5px solid #492378;
-  background: rgb(212, 209, 209);
+  background: #E7E8E7;
 }
 
 .title-feed-background {
@@ -305,14 +302,13 @@ body {
 .fa-arrow-up {
   margin-top: 10px;
   margin-left: 10px;
-  transition: 0.5s;
   cursor: pointer;
 }
 
 #seta-cima {
   background: #A3B2BF;
   border: none;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 #seta-cima:focus {
@@ -321,11 +317,17 @@ body {
 
 .tabela:hover #seta-cima {
   background: #304361;
+  color: white;
 }
 
 #contador {
   margin-left: 13px;
   font-size: 20px;
+  transition: 1s;
+}
+
+.tabela:hover #contador{
+  color: white;
 }
 
 .tabela .icon2 {
@@ -841,4 +843,4 @@ body {
     width: 260px;
   }
 }
-</style> 
+</style>
