@@ -16,7 +16,7 @@
           <br>
         </div>
         <div id="boxSub" v-for="user in listaFala" :key="user.nome">
-          <div>{{user.nome}} - {{user.tempo}}s</div>
+          <div id={{}}>{{user.nome}} - {{user.tempo}}s</div>
         </div>
       </div>
       <div id="input-box">
@@ -33,32 +33,36 @@
 export default {
   data() {
     return {
-      listaFala: [],
       nome: "",
       indexFalante: 0,
+      i:-1,
+      listaFala:[]   
     };
   },
   methods: {
-    cronometrar() {
-      let falante = this.listaFala[this.indexFalante];
-      let cronometro = setInterval(function () {
-        if (falante.tempo > 0) {
-          falante.tempo--;  
-        } 
-        else {
-          clearInterval(cronometro);
-          return
-        }
-      }, 1);
-
-    },
-
-    enviarSub() {
+       enviarSub() {
       this.listaFala.push({
         nome: this.nome,
         tempo: 180
       });
-    }
+    },
+   
+   cronometrar() {
+      this.i++;
+      let falante = this.listaFala[this.i];
+      let cronometro = setInterval(function () {
+        
+        if (falante.tempo > 0) {
+          falante.tempo--;  
+        } 
+        if(falante.tempo === 0) {
+            clearInterval(cronometro);
+    
+
+
+        }     
+      }, 1);
+    },
   }
 }
 </script>

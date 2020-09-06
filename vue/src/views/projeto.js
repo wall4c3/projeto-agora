@@ -22,7 +22,7 @@ function Sub(nome, tempo, minutos, aux) {
 }
 
 
-enviarSub.onclick = function() {
+enviarSub.onclick = function () {
     //cria nova div com informaçoes de nome, tempo de fala, e a hora
     var sub = new Sub(nome.value, tempo, aux);
     var novaSub = document.createElement("div");
@@ -46,7 +46,7 @@ var cronometro;
 
 
 //Inicia contagem do countDown
-start.onclick = function() {
+start.onclick = function () {
     if (j === i) {
         cronometro = setInterval(countDown, miliseg);
         seg = 60;
